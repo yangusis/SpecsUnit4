@@ -42,6 +42,14 @@ const Auth = () => {
     setPassword(e.target.value);
     console.log(password);
   };
+
+  const loginClickHandler = (e) => {
+    if (register) {
+      setRegister(false);
+    } else {
+      setRegister(true);
+    }
+  };
   //^ End Change Handlers
 
   return (
@@ -64,7 +72,7 @@ const Auth = () => {
         />
         <button className="form-btn">{register ? "Sign Up" : "Login"}</button>
       </form>
-      <button className="form-btn">
+      <button className="form-btn" onClick={loginClickHandler}>
         Need to {register ? "Login" : "Sign Up"}?
       </button>
     </main>
